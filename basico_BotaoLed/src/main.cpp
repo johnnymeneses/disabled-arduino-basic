@@ -21,6 +21,7 @@ int estadoBotao;
 
 void setup()
 {
+    Serial.begin(9600);
     pinMode(LED, OUTPUT);    
   	pinMode(botaoliga,INPUT_PULLUP);
 }
@@ -28,14 +29,17 @@ void setup()
 void loop()
 {
 	
-	estadoBotao = digitalRead(botaoliga);
+  	estadoBotao = digitalRead(botaoliga);
   	
   	if(estadoBotao==0)
     {
     	digitalWrite(LED,HIGH);
+      Serial.println("Liguei a Luz");
+      
     }else
     {
     	digitalWrite(LED,LOW);
     }
+
 
 }
